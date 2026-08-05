@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/api/api_consumer.dart';
 import '../../../../core/api/api_constants.dart';
@@ -11,7 +10,10 @@ import '../models/weather_model.dart';
 /// Abstract contract for fetching remote weather data.
 abstract class WeatherRemoteDataSource {
   /// Fetches weather details for the provided [cityName].
-  Future<WeatherModel> getCurrentWeather(String cityName, {String langCode = 'en'});
+  Future<WeatherModel> getCurrentWeather(
+    String cityName, {
+    String langCode = 'en',
+  });
 }
 
 /// Implementation of [WeatherRemoteDataSource] with Smart City-Based Offline Caching support.
@@ -21,16 +23,17 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
   const WeatherRemoteDataSourceImpl({required this.apiConsumer});
 
   @override
-  Future<WeatherModel> getCurrentWeather(String cityName, {String langCode = 'en'}) async {
+  Future<WeatherModel> getCurrentWeather(
+    String cityName, {
+    String langCode = 'en',
+  }) async {
     final trimmedCity = cityName.trim();
 
     // 1. Validate city input format
     final RegExp validCityRegex = RegExp(r"^[a-zA-Z\s\-]+$");
     if (trimmedCity.isEmpty || !validCityRegex.hasMatch(trimmedCity)) {
       throw ErrorHandler(
-        const InvalidCityFailure(
-          message: AppStrings.invalidCityName,
-        ),
+        const InvalidCityFailure(message: AppStrings.invalidCityName),
       );
     }
 
@@ -56,11 +59,14 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
     } catch (error) {
       // 4. Offline Fallback Strategy:
       // Check if we have cached weather specifically for this requested city (e.g. Cairo or Giza)
-      final cachedCityJsonString = AppCacheHelper.getCachedWeatherForCity(trimmedCity);
-      
+      final cachedCityJsonString = AppCacheHelper.getCachedWeatherForCity(
+        trimmedCity,
+      );
+
       if (cachedCityJsonString.isNotEmpty) {
         try {
-          final cachedJson = jsonDecode(cachedCityJsonString) as Map<String, dynamic>;
+          final cachedJson =
+              jsonDecode(cachedCityJsonString) as Map<String, dynamic>;
           // Return cached city weather without throwing network error
           return WeatherModel.fromJson(cachedJson);
         } catch (_) {
