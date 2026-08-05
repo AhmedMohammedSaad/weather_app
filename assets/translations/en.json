@@ -1,0 +1,23 @@
+{
+  "appName": "Weather App",
+  "windSpeed": "Wind Speed",
+  "humidity": "Humidity",
+  "searchCityHint": "Search city (e.g. Cairo, Alexandria)",
+  "noRouteDefined": "No route defined for {}",
+  "unableToLoadWeather": "Unable to Load Weather",
+  "errorFetchingWeather": "An error occurred while fetching weather.",
+  "tryDefaultCity": "Try Default City (Cairo)",
+  "noCityProvided": "No City Provided",
+  "typeValidCityName": "Please type a valid city name to search for weather info.",
+  "welcomeToWeatherApp": "Welcome to Weather App",
+  "typeCityNameToView": "Type a city name above to view current weather details.",
+  "invalidCityName": "Invalid city name. Please enter a valid city name without numbers or special characters.",
+  "connectionTimeout": "Connection timeout. Please check your internet.",
+  "requestCancelled": "Request was cancelled.",
+  "unexpectedNetworkError": "Unexpected network error.",
+  "noInternetConnection": "No internet connection or timeout. Displaying cached data if available.",
+  "cityNotFound": "City not found or invalid request. Please check spelling.",
+  "networkErrorOccurred": "Network error occurred. Please check your connection.",
+  "serverError": "Server error occurred.",
+  "unexpectedError": "An unexpected error occurred. Please try again."
+}
