@@ -1,44 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:weather_app/features/weather/domain/entities/weather_entity.dart';
 import 'package:weather_app/features/weather/presentation/widgets/weather_info_card_widget.dart';
 
 void main() {
-  const testWeather = WeatherEntity(
-    cityName: 'Cairo',
-    temperature: 32.5,
-    condition: 'Sunny',
-    icon: '☀️',
-    humidity: 45,
-    windSpeed: 12.4,
-  );
-
-  Widget createWidgetUnderTest() {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      builder: (context, child) {
-        return const MaterialApp(
-          home: Scaffold(
-            body: WeatherInfoCardWidget(weather: testWeather),
-          ),
-        );
-      },
+  testWidgets('WeatherInfoCardWidget renders full weather details entity correctly',
+      (WidgetTester tester) async {
+    const testWeather = WeatherEntity(
+      cityName: 'Cairo',
+      temperature: 28.0,
+      condition: 'Clear',
+      icon: 'assets/images/png/sun.png',
+      humidity: 50,
+      windSpeed: 15.0,
+      isDay: true,
     );
-  }
 
-  testWidgets('WeatherInfoCardWidget renders city, temperature, condition, and icon correctly', (WidgetTester tester) async {
-    // 1. Build the widget tree
-    await tester.pumpWidget(createWidgetUnderTest());
+    await tester.pumpWidget(
+      ScreenUtilInit(
+        designSize: const Size(375, 812),
+        builder: (context, child) => const MaterialApp(
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: WeatherInfoCardWidget(weather: testWeather),
+            ),
+          ),
+        ),
+      ),
+    );
 
-    // 2. Verify all core required weather items are present
     expect(find.text('Cairo'), findsOneWidget);
-    expect(find.text('32.5°C'), findsOneWidget);
-    expect(find.text('Sunny'), findsOneWidget);
-    expect(find.text('☀️'), findsOneWidget);
-
-    // 3. Verify additional metrics
-    expect(find.text('45%'), findsOneWidget);
-    expect(find.text('12.4 km/h'), findsOneWidget);
+    expect(find.text('28°'), findsOneWidget);
+    expect(find.text('🌿 Clear'), findsOneWidget);
+    expect(find.text('15.0 km/h'), findsOneWidget);
+    expect(find.text('50%'), findsOneWidget);
   });
 }
