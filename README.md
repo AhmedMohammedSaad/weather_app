@@ -106,9 +106,10 @@ Includes automated widget unit testing (e.g., `WeatherHeaderSectionTest`) valida
 <img width="421" height="861" alt="Android Emulator - Pixel_5_5554 06_08_2026 01_35_04 ص" src="https://github.com/user-attachments/assets/18e25765-5ad0-4e5a-a960-26e7d7373f32" />
 
 <img width="421" height="861" alt="Android Emulator - Pixel_5_5554 06_08_2026 01_36_20 ص" src="https://github.com/user-attachments/assets/93a7d3eb-5ebd-4424-ad40-165390981356" />
+
 <img width="421" height="861" alt="Android Emulator - Pixel_5_5554 06_08_2026 01_35_36 ص" src="https://github.com/user-attachments/assets/9e4d680d-66dc-43f0-9e46-f9b61b05052e" />
+
 <img width="421" height="861" alt="Android Emulator - Pixel_5_5554 06_08_2026 01_35_53 ص" src="https://github.com/user-attachments/assets/7b7c772f-676a-4026-bf5e-ab116fa02aba" />
-![Uploading Android Emulator - Pixel_5_5554 06_08_2026 01_35_36 ص.png…]()
 
 <img width="421" height="861" alt="Android Emulator - Pixel_5_5554 06_08_2026 01_35_22 ص" src="https://github.com/user-attachments/assets/4ffc19e5-da61-491e-ba46-5c8d36efcab4" />
 
