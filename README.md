@@ -1,4 +1,4 @@
-<img width="421" height="861" alt="Android Emulator - Pixel_5_5554 06_08_2026 01_35_04 ص" src="https://github.com/user-attachments/assets/72f0827c-c523-4816-87b9-88daed712e2d" /># Weather App — Production-Grade Flutter Application
+># Weather App — Production-Grade Flutter Application
 
 A production-grade, highly scalable Flutter application built following **Clean Architecture**, **Feature-First Project Structure**, **SOLID Principles**, and **Production Best Practices**.
 
