@@ -1,4 +1,4 @@
-># Weather App — Production-Grade Flutter Application
+# Weather App — Production-Grade Flutter Application
 
 A production-grade, highly scalable Flutter application built following **Clean Architecture**, **Feature-First Project Structure**, **SOLID Principles**, and **Production Best Practices**.
 
