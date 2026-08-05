@@ -1,4 +1,4 @@
-# 🌤️ Weather App — Production-Grade Flutter Application
+# Weather App — Production-Grade Flutter Application
 
 A production-grade, highly scalable Flutter application built following **Clean Architecture**, **Feature-First Project Structure**, **SOLID Principles**, and **Production Best Practices**.
 
@@ -149,4 +149,4 @@ Includes automated widget unit testing (e.g., `WeatherHeaderSectionTest`) valida
 ---
 
 ## 👨‍💻 Developer
-Crafted with ❤️ following **Senior Flutter Engineering Principles**.
+Crafted with ❤️ following **Ahmed Saad**.
