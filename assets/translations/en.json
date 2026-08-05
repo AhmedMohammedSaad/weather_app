@@ -16,6 +16,7 @@
   "requestCancelled": "Request was cancelled.",
   "unexpectedNetworkError": "Unexpected network error.",
   "noInternetConnection": "No internet connection or timeout. Displaying cached data if available.",
+  "internetReturned": "Internet connection restored.",
   "cityNotFound": "City not found or invalid request. Please check spelling.",
   "networkErrorOccurred": "Network error occurred. Please check your connection.",
   "serverError": "Server error occurred.",

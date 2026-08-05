@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/helpers/app_responsive_helper.dart';
 import '../../../../core/theme/app_text_style.dart';
 
-/// Small widget displaying the city name with text overflow protection.
+/// Small widget displaying the city name with text overflow protection & tablet font normalization.
 class WeatherCityNameWidget extends StatelessWidget {
   final String cityName;
 
@@ -16,7 +16,7 @@ class WeatherCityNameWidget extends StatelessWidget {
     return Text(
       cityName,
       style: AppTextStyle.heading1.copyWith(
-        fontSize: 28.sp,
+        fontSize: AppResponsiveHelper.getFontSize(context, 26),
         fontWeight: FontWeight.bold,
         letterSpacing: 0.5,
       ),

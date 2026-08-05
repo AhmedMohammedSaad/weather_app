@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/helpers/app_responsive_helper.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_style.dart';
 
-/// Small widget displaying the temperature formatted value.
+/// Small widget displaying the temperature formatted value with tablet normalization.
 class WeatherTemperatureWidget extends StatelessWidget {
   final double temperature;
 
@@ -17,7 +17,7 @@ class WeatherTemperatureWidget extends StatelessWidget {
     return Text(
       '${temperature.toStringAsFixed(1)}°C',
       style: AppTextStyle.heading1.copyWith(
-        fontSize: 48.sp,
+        fontSize: AppResponsiveHelper.getFontSize(context, 44),
         fontWeight: FontWeight.w800,
         color: AppColors.white,
       ),

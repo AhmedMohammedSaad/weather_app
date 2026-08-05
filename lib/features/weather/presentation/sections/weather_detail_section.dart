@@ -10,6 +10,9 @@ import '../widgets/weather_shimmer_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/constants/app_strings.dart';
 
+import '../../../../core/helpers/app_responsive_helper.dart';
+import 'weather_tablet_detail_section.dart';
+
 /// Section component connecting [WeatherCubit] state to UI representation.
 /// Consumes Single [WeatherState] with [WeatherStatus] enum.
 class WeatherDetailSection extends StatelessWidget {
@@ -25,6 +28,10 @@ class WeatherDetailSection extends StatelessWidget {
 
           case WeatherStatus.success:
             if (state.weather != null) {
+              final isTablet = AppResponsiveHelper.isTablet(context);
+              if (isTablet) {
+                return WeatherTabletDetailSection(weather: state.weather!);
+              }
               return WeatherInfoCardWidget(weather: state.weather!);
             }
             return const SizedBox.shrink();

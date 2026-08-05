@@ -18,6 +18,7 @@ class AppStrings {
   static const String requestCancelled = 'requestCancelled';
   static const String unexpectedNetworkError = 'unexpectedNetworkError';
   static const String noInternetConnection = 'noInternetConnection';
+  static const String internetReturned = 'internetReturned';
   static const String cityNotFound = 'cityNotFound';
   static const String networkErrorOccurred = 'networkErrorOccurred';
   static const String serverError = 'serverError';

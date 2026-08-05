@@ -10,6 +10,9 @@ import 'package:nb_utils/nb_utils.dart';
 import '../cubit/weather_cubit.dart';
 import '../cubit/weather_state.dart';
 
+import '../../../../core/helpers/app_responsive_helper.dart';
+import '../../../../core/constants/app_strings.dart';
+
 /// Screen View component representing the Weather feature page.
 /// Styled with full-screen purple linear gradient matching the reference app design.
 class WeatherView extends StatelessWidget {
@@ -17,6 +20,8 @@ class WeatherView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isTablet = AppResponsiveHelper.isTablet(context);
+
     return Scaffold(
       body: MultiBlocListener(
         listeners: [
@@ -26,13 +31,13 @@ class WeatherView extends StatelessWidget {
             listener: (context, state) {
               if (!state.isOnline) {
                 toast(
-                  'No internet connection',
+                  AppStrings.noInternetConnection.tr(context: context),
                   bgColor: AppColors.error,
                   textColor: AppColors.white,
                 );
               } else {
                 toast(
-                  'Internet is returned',
+                  AppStrings.internetReturned.tr(context: context),
                   bgColor: AppColors.success,
                   textColor: AppColors.white,
                 );
@@ -65,15 +70,25 @@ class WeatherView extends StatelessWidget {
             ),
           ),
           child: SafeArea(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const WeatherHeaderSection(),
-                  SizedBox(height: 24.h),
-                  const WeatherDetailSection(),
-                ],
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: isTablet ? 900.w : double.infinity,
+                ),
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: isTablet ? 36.w : 20.w,
+                    vertical: 16.h,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const WeatherHeaderSection(),
+                      SizedBox(height: 24.h),
+                      const WeatherDetailSection(),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
