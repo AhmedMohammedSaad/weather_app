@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../core/widgets/app_empty_state_widget.dart';
-import '../../../../core/widgets/app_toast.dart';
 import '../cubit/weather_cubit.dart';
 import '../cubit/weather_state.dart';
 import '../widgets/weather_info_card_widget.dart';
@@ -52,8 +51,7 @@ class WeatherDetailSection extends StatelessWidget {
           case WeatherStatus.empty:
             return AppEmptyStateWidget(
               title: AppStrings.noCityProvided.tr(context: context),
-              message:
-                  AppStrings.typeValidCityName.tr(context: context),
+              message: AppStrings.typeValidCityName.tr(context: context),
               imagePath: AppImages.cloudyNight,
             );
 
@@ -61,8 +59,7 @@ class WeatherDetailSection extends StatelessWidget {
           default:
             return AppEmptyStateWidget(
               title: AppStrings.welcomeToWeatherApp.tr(context: context),
-              message:
-                  AppStrings.typeCityNameToView.tr(context: context),
+              message: AppStrings.typeCityNameToView.tr(context: context),
               imagePath: AppImages.sun,
             );
         }
